@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood bank</title>
+    <link rel="stylesheet" href="Style_of_BloodBank.css" />
+/div>
+                <div class="dot"></div>
+            </div>
+            <input id="userName" class="name-body" type="text" placeholder="enter full name" />
+            <input id="userAge" class="age-body" type="number" placeholder="enter age" />
+            <input id="userNumber" class="number-body" type="number" placeholder="enter number" />
+
+
+            <select id="bloodGroup" class="bloodGroup-body">
+                <option value="null"> select blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <button onclick="registerBtn()">Register</button>
+
+        </main>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <main class="register-form">
+            <h1>Register a donar</h1>
+
+            <div class="dots" id="loader">
+                <div class="dot"></div>
+                <div class="dot"><
+        <section class="search-body ">
+            <h1>Search for donars</h1>
+            <p class="error-body" id="error-body"></p>
+            <div class="search-block">
+                <select id="searchKeyword" class="bloodGroup-body">
+                    <option value="null"> select blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <button onclick="fetchDonars()">Search</button>
+            </div>
+            <div class="search-result" id="searchResultBody">
+            </div>
+        </section>
+    </div>23
+</body>
+
+</html>

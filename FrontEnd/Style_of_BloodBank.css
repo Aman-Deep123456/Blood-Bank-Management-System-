@@ -1,0 +1,305 @@
+body {
+    background-color: #fff5f5; /* Very light pink/white */
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4a1c1c; /* Dark maroon for text */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 900px;
+}
+
+.register-form,
+.search-body {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(183, 28, 28, 0.15);
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.register-form:hover,
+.search-body:hover {
+    box-shadow: 0 8px 20px rgba(183, 28, 28, 0.3);
+    transform: translateY(-3px);
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-body h1,
+.register-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b71c1c; /* Strong blood red */
+    font-size: 2em;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(183, 28, 28, 0.6);
+}
+
+.error-body {
+    text-align: center;
+    color: #d32f2f; /* Red error */
+    height: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+input,
+select,
+button {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1.5px solid #b71c1c;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+}
+
+input {
+    width: 80%;
+    background-color: #fff0f0;
+    color: #4a1c1c;
+}
+
+input:focus {
+    border-color: #e53935;
+    box-shadow: 0 0 8px rgba(229, 57, 53, 0.5);
+    background-color: #ffecec;
+}
+
+select {
+    width: 85%;
+    background-color: #fff0f0;
+    color: #4a1c1c;
+    cursor: pointer;
+}
+
+select:hover {
+    border-color: #e53935;
+    background-color: #ffecec;
+}
+
+option {
+    background-color: #fff;
+    color: #4a1c1c;
+}
+
+button {
+    width: 140px;
+    background-color: #b71c1c;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(183, 28, 28, 0.6);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #e53935;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(229, 57, 53, 0.75);
+}
+
+button:active {
+    transform: scale(0.96);
+    box-shadow: none;
+}
+
+.search-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: auto;
+}
+
+.search-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.search-result {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    gap: 15px;
+    scroll-behavior: smooth;
+}
+
+.search-result::-webkit-scrollbar {
+    background-color: #f9e6e6;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.search-result::-webkit-scrollbar-thumb {
+    background-color: #e53935;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.search-result::-webkit-scrollbar-thumb:hover {
+    background-color: #b71c1c;
+}
+
+.searchItem {
+    min-width: 200px;
+    color: #fff;
+    background: linear-gradient(135deg, #b71c1c 0%, #7f1212 100%);
+    margin: 0;
+    font-size: 0.95rem;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 14px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 3px 10px rgba(183, 28, 28, 0.3);
+    animation: itemLoader 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.searchItem:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 10px 18px rgba(229, 57, 53, 0.5);
+    background: linear-gradient(135deg, #e53935 0%, #9b1c1c 100%);
+}
+
+.searchItem p {
+    margin: 5px 0;
+    width: 90%;
+    text-align: center;
+}
+
+.searchItem div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Animation for loading blood drops */
+.dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.dot {
+    position: relative;
+    width: 16px;
+    height: 24px;
+    background-color: #b71c1c;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform-origin: center bottom;
+    animation: pulseDrop 0.9s infinite ease-in-out;
+}
+
+.dot::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 10px;
+    background: radial-gradient(circle at center, #e53935, #b71c1c);
+    border-radius: 50% 50% 70% 70% / 90% 90% 50% 50%;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+    margin-top: 4px;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes pulseDrop {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        filter: drop-shadow(0 0 4px rgba(229, 57, 53, 0.7));
+    }
+    50% {
+        transform: scale(0.7) translateY(-6px);
+        opacity: 0.7;
+        filter: drop-shadow(0 0 8px rgba(229, 57, 53, 1));
+    }
+}
+
+@keyframes itemLoader {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .main-container {
+        width: 100%;
+    }
+
+    input,
+    select {
+        width: 95%;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px 0;
+    }
+
+    .searchItem {
+        min-width: 160px;
+        font-size: 0.9rem;
+        padding: 14px;
+    }
+
+    .searchItem div {
+        gap: 5px;
+    }
+}
+
+
