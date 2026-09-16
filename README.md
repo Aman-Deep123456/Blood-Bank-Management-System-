@@ -43,14 +43,6 @@ Blood-Bank-Management-System/
 └── README.md            # Project documentation
 ```
 
----
-
-## 📸 Screenshots
-
-> *(Optional: Add screenshots here to showcase your UI)*
-
----
-
 ## 📦 Setup Instructions
 
 ```bash
